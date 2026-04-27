@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000'; 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 export const searchFood = async (query) => {
   const response = await axios.get(`${API_URL}/api/food/search?query=${query}`);
